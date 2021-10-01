@@ -1,0 +1,83 @@
+package actividad8;
+import java.io.*;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+/**
+ *
+ * @author annip
+ */
+public class ACTIVIDAD8 {
+    public static BufferedReader entrada=
+                        new BufferedReader (new InputStreamReader (System.in));
+
+    public static void main(String[] args) throws IOException {
+        
+   Scanner entrada= new Scanner (System.in);
+        Scanner lee= new Scanner(System.in);
+   
+              System.out.println("¡HOLA! ¿CUÁL ES TU NOMBRE?");
+            String nombre= lee.nextLine();
+            System.out.println("*********************************************************************************************");
+            System.out.println("Bienvenid@ "+nombre+ ",en este programa podrás visualizar tu promedio de tus califiaciones");
+         
+   int nCalificaciones=5;
+        int [] calificaciones=new int[nCalificaciones];
+        System.out.println("*********************************************************************************************");
+        System.out.println("INTRODUCE TUS CALIFICACIONES ");
+            for (int i=0;i<nCalificaciones;i++){
+                System.out.println((i+1)+". Ingresa una calificación ");
+                calificaciones[i]=entrada.nextInt();
+            }
+          System.out.println("----------------------------------------------------------------------------------------------");
+          System.out.println("LAS CALIFICACIONES QUE INGRESASTE SON: ");
+            for(int b=0;b<nCalificaciones;b++){
+                    System.out.println("Calificación [" + (b+1) +"]= " +calificaciones[b]);
+            }
+           
+           int suma=0;
+           for (int a=0;a<calificaciones.length;a++){
+               suma+= calificaciones[a];
+           }
+           //MÉTODO DE PROMEDIO
+               double promedio=0;
+               promedio= suma/5;
+               
+               System.out.println("EL PROMEDIO DE LAS CALIFICACIONES ES: " + promedio);
+            System.out.println("----------------------------------------------------------------------------------------------");
+           //MÉTODO DE ASIGNACIÓN DE NOTA
+           char calif;
+           if(promedio>=91){
+               calif='A';               
+           }
+           else if(promedio>=81){
+               calif='B';             
+           }
+           else if(promedio>=71){
+               calif='C';
+           }
+           else if(promedio>=61){
+               calif='D';               
+           }
+           else if(promedio>=51){
+               calif='E';               
+           }
+           else
+               calif='F';
+        System.out.println("LA CALIFICACIÓN DEL PROMEDIO TIENE UNA NOTA DE " +calif);         
+        System.out.println("----------------------------------------------------------------------------------------------");
+    
+        System.out.println("\n*********************************************************************************************");
+        System.out.println("FORMATO DE INFORME FINAL DE CALIFICACIONES");
+        System.out.println("*********************************************************************************************");
+        
+        System.out.println("Nombre del estudiante: "+ nombre);
+        for(int c=0;c<nCalificaciones;c++){
+                    System.out.println("Calificación [" + (c+1) +"]= " +calificaciones[c]);}
+                    System.out.println("Promedio del Alumno "+promedio);
+                    System.out.println("Calificación "+calif);
+            }
+    
+           }
+
+           
